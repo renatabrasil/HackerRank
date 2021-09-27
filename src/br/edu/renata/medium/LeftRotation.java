@@ -1,3 +1,5 @@
+package br.edu.renata.medium;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -22,7 +24,7 @@ public class LeftRotation {
         String[] aItems = scanner.nextLine().split(" ");
 //        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
         
-        System.out.println("Começou...");
+        System.out.println("Comeï¿½ou...");
         
         String[] prefix = Arrays.copyOfRange(aItems, d, n);
         String[] sufix = Arrays.copyOfRange(aItems, 0, d);
@@ -33,6 +35,6 @@ public class LeftRotation {
         System.out.println(Arrays.toString(resultado).replace("[", "").replace("]", "").replace(",", ""));
         
         long elapsedTime = System.currentTimeMillis() - start;
-        System.out.println("\nTempo de execução: "+elapsedTime+ " ms");
+        System.out.println("\nTempo de execuï¿½ï¿½o: "+elapsedTime+ " ms");
     }
 }

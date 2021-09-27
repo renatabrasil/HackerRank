@@ -1,10 +1,8 @@
+package br.edu.renata.medium;
+
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class Result {
 
@@ -17,23 +15,23 @@ class Result {
      *  2. 2D_INTEGER_ARRAY queries
      */
 
-    public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
-    // Write your code here
+     static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+        // Write your code here
         List<Integer> array = new ArrayList<Integer>();
         List<List<Integer>> sequencies = new ArrayList<List<Integer>>(100000);
-        for(int i=0;i<n;i++)
+        for (int i = 0; i < n; i++)
             sequencies.add(new ArrayList<Integer>());
-        
+
         int lastAnswer = 0;
-        for(List<Integer> query: queries) {
+        for (List<Integer> query : queries) {
             int queryType = query.get(0);
             int y = query.get(2);
             int index = (query.get(1) ^ lastAnswer) % n;
             List<Integer> sequence = sequencies.get(index);
-            if (queryType == 1) 
+            if (queryType == 1)
                 sequence.add(y);
             else if (queryType == 2) {
-                lastAnswer = sequence.get(y%sequence.size());
+                lastAnswer = sequence.get(y % sequence.size());
                 array.add(lastAnswer);
             }
         }
